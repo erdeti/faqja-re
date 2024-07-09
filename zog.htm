@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bird Page</title>
+    <style>
+        body {
+            background-color: #87CEEB; /* Light blue background to represent the sky */
+            color: #FFFFFF; /* White text color */
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.5em;
+        }
+        .bird {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #FFFFFF;
+            border-radius: 50% 50% 0 0;
+            transform: rotate(45deg);
+            animation: fly 10s infinite linear;
+        }
+        .bird::before,
+        .bird::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #FFFFFF;
+            border-radius: 50%;
+        }
+        .bird::before {
+            top: -10px;
+            left: -10px;
+        }
+        .bird::after {
+            top: -10px;
+            right: -10px;
+        }
+        @keyframes fly {
+            0% {
+                transform: translateY(0) translateX(0) rotate(45deg);
+            }
+            100% {
+                transform: translateY(-200vh) translateX(200vw) rotate(45deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Mireseerdhe Zog</h1>
+    <p>Zogu im i bukur, me sy si dritë, </p>
+	 <p>Në zemrën time ndriçon çdo ditë.</p>
+ <p> Me mirësinë tënde, shpirtin ma ngroh,</p> 
+ <p>Je ëndrrim i ëmbël, zemrën ma rob.  </p>
+
+  <div class="gif-link">
+        <a href="J.htm">
+            <img src="https://media1.tenor.com/m/-5M-pp0mk2cAAAAd/funny-animals-cat.gif" alt="GIF Link" style="width: 100px;">
+        </a>
+    </div>
+
+    <script>
+        const numberOfBirds = 50;
+        for (let i = 0; i < numberOfBirds; i++) {
+            const bird = document.createElement('div');
+            bird.classList.add('bird');
+            bird.style.top = `${Math.random() * 100}vh`;
+            bird.style.left = `${Math.random() * 100}vw`;
+            bird.style.animationDuration = `${5 + Math.random() * 10}s`;
+            bird.style.animationDelay = `${Math.random() * 5}s`;
+            document.body.appendChild(bird);
+        }
+
+        setTimeout(function() {
+            window.location.href = "J.htm";
+        }, 20000); // Redirect after 30 seconds
+    </script>
+</body>
+</html>
